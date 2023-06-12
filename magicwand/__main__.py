@@ -1,5 +1,5 @@
-from . import *
-import cv2 as cv
+from . import SelectionWindow
+import cv2
 import argparse
 
 
@@ -8,7 +8,7 @@ if __name__ == "__main__":
     parser.add_argument("image", help="path to image")
     args = parser.parse_args()
 
-    img = cv.imread(args.image)
+    img = cv2.imread(args.image)
     if img is None or img.size == 0:
         raise Exception(f"Unable to read image {args.image}. Please check the path.")
 
@@ -21,4 +21,4 @@ if __name__ == "__main__":
     print()
 
     window.show()
-    cv.destroyAllWindows()
+    cv2.destroyAllWindows()
